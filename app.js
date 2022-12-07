@@ -1,17 +1,10 @@
-const express = require("express")
-const mysql = require("mysql")
-
+const express = require("express");
 const app = express();
-const port = 3306
+const port = process.env.PORT || 3001;
 
-app.listen(port || 0, ()=>{
-    console.log("api works server listenning at localhost: " + port);
-})
+app.get("/", (req, res) => res.send("Hello API Node Js & Express"));
 
-app.get("/", (req, res)=>{
-    res.send("Hello API")
-})
-
+app.listen(port, () => console.log(`Example app listening on port ${port}!`));
 
    
 
